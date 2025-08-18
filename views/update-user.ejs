@@ -12,37 +12,37 @@
     <div class="container mt-5">
       <div class="card shadow-lg" style="width: 700px; margin: auto; ">
         <div class="card-header bg-primary text-white text-center">
-            <h2>Add New User</h2>
+            <h2>Update User</h2>
         </div>
         <div class="card-body">
-            <form action="/add-user" method="post">
+            <form action="/update-user/<%= oneUserData._id %>" method="post">
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="fname" class="form-label">First Name :</label> 
-                        <input type="text" name="fname" id="fname" class="form-control border border-primary">
+                        <input type="text" name="fname" value="<%= oneUserData.fname %>" id="fname" class="form-control border border-primary">
                     </div>
                     <div class="col-md-6">
                          <label for="lname" class="form-label">Last Name :</label> 
-                        <input type="text" name="lname" id="lname" class="form-control border border-primary">
+                        <input type="text" name="lname" value="<%= oneUserData.lname %>" id="lname" class="form-control border border-primary">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label" >Email:</label>
-                    <input type="email" name="email" id="email" class="form-control border-primary">
+                    <input type="email" name="email" value="<%= oneUserData.email %>" id="email" class="form-control border-primary">
                 </div>
 
                 <div class="mb-3">
                     <label for="phone" class="form-label" >Phone:</label>
-                    <input type="phone" name="phno" id="phone" class="form-control border-primary">
+                    <input type="phone" name="phone" value="<%= oneUserData.phno %>" id="phone" class="form-control border-primary">
                 </div>
 
                 <div class="mb-3">
                     <label for="address" class="form-label" >Address:</label>
-                    <textarea name="address" id="address" class="form-control border-primary" rows="3"></textarea>
+                    <textarea name="address" id="address" class="form-control border-primary" rows="3"> <%= oneUserData.address %> </textarea>
                 </div>
 
                 <div>
-                    <button type="submit" class="btn btn-success px-4">Save</button>
+                    <button type="submit" class="btn btn-warning px-4">Update</button>
                     <a href="/" class="btn btn-secondary px-3">Cancel</a>
                 </div>
             </form>
